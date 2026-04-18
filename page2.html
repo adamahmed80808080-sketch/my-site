@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+h1 {
+  margin: 20px;
+}
+
+/* الصور تحت بعض */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+
+.item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: show 1.5s forwards;
+}
+
+.item img {
+  width: 90%;
+  max-width: 300px;
+  border-radius: 15px;
+}
+
+/* ظهور هادي */
+@keyframes show {
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* قلوب خفيفة */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  color: #ff4b7d;
+  animation: float 6s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes float {
+  to {transform: translateY(-100vh);}
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #ff4b7d;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🍓 Our Memoryis🍓</h1>
+
+<!-- 🎵 الأغنية -->
+<audio autoplay loop>
+  <source src="song1.mp3">
+</audio>
+
+<div class="gallery">
+  <!-- مثال صورة -->
+  <div class="item">
+    <img src="img1.jpg">
+    <p>اول صوره كنت عملها ماتشينج ل لون عنينا مع بعض 💖</p>
+  </div>
+
+  <div class="item">
+    <img src="img2.jpg">
+    <p>هنا كنت بتوريني قد اي تانيه ثانوي صعبه ومرهقه ونت م قادره تستحملي من كتر المذكره</p>
+  </div>
+<div class="item">
+  <img src="img6.jpg">
+  <p>كنتي مضيعه السلسله دي وكانت غاليه عليكي اوي وبتحبيها وعيطي وطلعت مع سلمي ف الاخر وكنتي فرحانه اوي</p>
+</div>
+<div class="item">
+  <img src="img5.jpg">
+  <p>كنتي اول مره تظبطي الوش بتاع صنيه المكرونه البشاميل ف حياتك ورتيهالي وقعدنا نضحك ونهزر</p>
+</div>
+<div class="item">
+  <img src="img4.jpg">
+  <p>كنتي لسه جايبه الانسيال ده وعيزاني اشوفو</p>
+</div>
+<div class="item">
+  <img src="img3.jpg">
+  <p>كنتي لسه لاقيه الجزمه دي عندك مركونه وبتوريني قبل وبعد النضافه</p>
+</div>
+
+</div>
+
+<button onclick="go()">شوفي الباقي 💕</button>
+
+<script>
+function go(){
+  window.location.href = "page3.html";
+}
+
+/* قلوب */
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},1500);
+</script>
+
+</body>
+</html>
